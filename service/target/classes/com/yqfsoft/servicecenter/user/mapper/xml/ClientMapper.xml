@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqfsoft.servicecenter.user.mapper.ClientMapper">
+<!--    定义一个片段-->
+    <sql id="clientInfo">
+        u.`id`,
+          u.`username`,
+          u.`telefono`,
+          u.`email`,
+          c.`client_identidad`,
+          u.`bloqueado`,
+          c.`address_name`,
+          c.`address_number`,
+          c.`address_escalera`,
+          c.`address_planta`,
+          c.`address_puerta`,
+          c.`codigo_postal`,
+          c.`ciudad`,
+          c.`provincia`,
+          u.`create_time`,
+          u.`last_login_time`
+    </sql>
+<!--    查询所有客户分页 -->
+    <select id="selectAllClientList" resultType="com.yqfsoft.servicecenter.user.entity.vo.ClientVo">
+        SELECT
+        <include refid="clientInfo"/>
+        FROM
+          `user` u
+          INNER JOIN `client` c ON u.username = c.client_name
+        ORDER BY u.`last_login_time` DESC;
+    </select>
+<!--    查询一些用户-->
+    <select id="selectClientList" resultType="com.yqfsoft.servicecenter.user.entity.vo.ClientVo">
+        SELECT
+        <include refid="clientInfo"/>
+        FROM
+        `user` u
+        INNER JOIN `client` c ON u.username = c.client_name
+        <where>
+            u.username in
+            <foreach collection="list" item="item" index="index"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+        ORDER BY u.`last_login_time` DESC;
+    </select>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqfsoft.servicecenter.product.mapper.ProductCategoryMapper">
+    <update id="updateProductCategoryInfo">
+        UPDATE product_category
+        <set>
+            <if test="productCategory.id != null">
+                id = #{productCategory.id},
+            </if>
+            <if test="productCategory.productCategoryNameEs != null">
+                product_category_name_es = #{productCategory.productCategoryNameEs},
+            </if>
+            <if test="productCategory.productCategoryNameZh != null">
+                product_category_name_zh = #{productCategory.productCategoryNameZh},
+            </if>
+        </set>
+        WHERE id = #{findId}
+    </update>
+</mapper>
