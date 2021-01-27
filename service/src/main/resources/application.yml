@@ -13,7 +13,7 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: UTC # europe/madrid
   datasource:
-    url: jdbc:mysql:/xxxx:3306/yqfsoftrestaurante?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql:/xxxx:3306/yqfsoftrestaurante?serverTimezone=Europe/Madrid&useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: xxxx
     driver-class-name: com.mysql.cj.jdbc.Driver
