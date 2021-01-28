@@ -27,7 +27,7 @@ public class FileUploadUtil {
     }
     // 获取上传的文件名称
     String fileOriginalName = file.getOriginalFilename();
-    // 文件扩展名 jpg (不是。jpg)
+    // 文件扩展名 jpg (不是.jpg)
     String extName = FileUtil.extName(fileOriginalName);
     // 扩展名去掉点
     extName = extName.toLowerCase();
