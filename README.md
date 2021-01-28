@@ -1,7 +1,11 @@
 # product_example
 
-common模块是全局工具类
+# common模块是全局工具类
 
-service模块是服务提供模块
+  common-util 全局工具类
+  spring-security 权限认证和授权
+  spring-validation 校验工具
 
-商品和商品类别的增删改查 图片上传 Excel导入导出功能等
+# service模块是服务提供模块
+
+  商品和商品类别的增删改查 图片上传 Excel导入导出功能等
