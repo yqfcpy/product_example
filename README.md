@@ -3,7 +3,7 @@
 # common模块是全局工具类
 
   common-util 全局工具类
-  spring-security 权限认证和授权
+  spring-security 认证和授权
   spring-validation 校验工具
 
 # service模块是服务提供模块
