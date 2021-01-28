@@ -33,7 +33,7 @@ public class ProductController {
   private ProductService productService;
 
   @ApiOperation("查询所有商品")
-  @GetMapping("/{currentPage}/{limit}")
+  @GetMapping("/productlist/{currentPage}/{limit}")
   // 解决Swagger2分页的坑 long类型最好这样写
   @ApiImplicitParams({
           @ApiImplicitParam(name = "currentPage", value = "当前页", required = true, paramType = "path", dataType = "Long",defaultValue = "1"),
