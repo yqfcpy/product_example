@@ -17,7 +17,7 @@ public class AutofillHandler implements MetaObjectHandler {
     // 自动填充添加和修改时间
     this.setFieldValByName("createTime", new Date(), metaObject);
     this.setFieldValByName("updateTime", new Date(), metaObject);
-    // 自动修改登录时间
+    // 用户注册时的登录时间 这里可写可不写 也可以写在前端
     this.setFieldValByName("lastLoginTime", new Date(), metaObject);
   }
   // 修改的时候运行的方法
