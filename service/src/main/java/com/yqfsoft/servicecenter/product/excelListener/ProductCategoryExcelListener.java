@@ -13,15 +13,15 @@ import java.util.List;
 @Slf4j
 public class ProductCategoryExcelListener extends AnalysisEventListener<ProductCategory> {
   public ProductCategoryService productCategoryService;
-  //每次读取多少条数据进行保存操作 做了一个统一管理
+  // 每次读取多少条数据进行保存操作 做了一个统一管理
   private static final int BATCH_COUNT = GlobalVariable.getEXCELIMPORTSIZE();
-  //由于每次读都是新new UserInfoDataListener的，所以这个list不会存在线程安全问题
+  // 由于每次读都是新new UserInfoDataListener的，所以这个list不会存在线程安全问题
   private List<ProductCategory> list;
   // 多少条导入成功
   @Getter
   private long writeSuccessCount;
 
-  public ProductCategoryExcelListener(){};
+  // public ProductCategoryExcelListener(){};
   public ProductCategoryExcelListener(ProductCategoryService productCategoryService){
     this.list = new ArrayList<>();
     this.writeSuccessCount = 0;
